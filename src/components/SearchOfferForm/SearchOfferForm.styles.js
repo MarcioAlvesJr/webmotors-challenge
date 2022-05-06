@@ -10,6 +10,7 @@ form{
 }
 `
 export const CheckboxWrapper = styled.div`
+    margin-top: 1rem;
     display: flex;
     gap: 2rem;
 ` 
@@ -17,8 +18,11 @@ export const InputsGrid = styled.div`
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 2.3rem);
-    gap: 1rem;
+    grid-template-rows: repeat(2, 3.4rem);
+    gap: 1.5rem;
+
+    font-size: 1rem;
+
     select{
         width: 100%;
         height: 100%;
@@ -30,7 +34,7 @@ export const InputsGrid = styled.div`
 export const  WhereRadiusDiv = styled.div`
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
 `
 
 export const AdvancedSearchBtn = styled.button`
@@ -39,6 +43,7 @@ export const AdvancedSearchBtn = styled.button`
         display: inline-block;
         margin-right: 0.2rem;
     }
+    font-size: 1.2rem;
     grid-column: span 2;
     width: fit-content;
     background-color: #ff000000;
@@ -47,6 +52,7 @@ export const AdvancedSearchBtn = styled.button`
     color: ${({theme})=>theme.dullRed};
 `
 export const ResetSubmitDiv= styled.div`
+    margin-top: 0.48rem;
     grid-column: span 2;
     display: grid;
     gap: 1.5rem;
@@ -64,7 +70,8 @@ export const ResetSubmitDiv= styled.div`
         border: none;
         font-weight: bolder;
         text-transform: uppercase;
-        height: 2.8rem;
+        height: 4.5rem;
+        font-size: 1.5rem;
         border-radius: 0.2rem;
     }
 
