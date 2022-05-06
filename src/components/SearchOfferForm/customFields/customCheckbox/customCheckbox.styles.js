@@ -43,7 +43,7 @@ input:checked + label:after {
   left: 8px;
   width: 6px;
   height: 10px;
-  border: solid ${({theme})=>theme.brightRed};
+  border: solid ${({theme})=>theme.dullRed};
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
