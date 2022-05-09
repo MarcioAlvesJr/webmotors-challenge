@@ -4,9 +4,8 @@ export const BtnWrapper = styled.div`
 display: flex;
 `
 export const CustomBtn = styled.button`
-&:hover{
-    cursor: pointer;
-}
+cursor: pointer;
+
 border: none;
 border-bottom: 4px solid #ff000000;
 background-color: #ff000000;
@@ -14,6 +13,10 @@ background-color: #ff000000;
 display: grid;
 column-gap: 1rem;
 grid-template-columns: 3.5rem 8rem;
+
+&.mobile{
+    grid-template-columns: 3rem 7rem;
+}
 
 
 .icon{

@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import styled from "styled-components";
+import {ReactComponent as MapPinSVG} from '../../imgs/svgs/mapPin.svg'
 
 export const Wrapper = styled.div`
     background-color: ${({theme})=>theme.white};
@@ -16,6 +17,16 @@ export const InputsGrid = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 3.4rem);
     gap: 1.5rem;
+
+    &.mobile{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 3.4rem);
+        
+        & > *, #version-wrapper{
+            grid-column: span 1;
+            
+        }
+    }
 
     font-size: 1rem;
 
@@ -73,4 +84,9 @@ export const ResetSubmitDiv= styled.div`
         border-radius: 0.2rem;
     }
 
+`
+export const MapPinIcon = styled(MapPinSVG)`
+height: 1rem;
+transform: scale(1.5);
+margin-right: 0.5rem;
 `

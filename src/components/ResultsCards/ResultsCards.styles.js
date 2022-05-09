@@ -5,5 +5,8 @@ export const CardsWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    &.mobile{
+        grid-template-columns: 1fr;
+    }
 
 `

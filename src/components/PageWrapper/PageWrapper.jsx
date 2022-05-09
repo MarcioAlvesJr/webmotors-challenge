@@ -9,9 +9,12 @@ import ResultsCards from '../ResultsCards/ResultsCards'
 import SearchOfferForm from '../SearchOfferForm/SearchOfferForm'
 import SellMyCarBtn from '../SellMyCarBtn/SellMyCarBtn'
 import { CarBike_SellCarDiv, WebMotorsLogo, Wrapper } from './PageWrapper.styles'
+import {useMediaQuery} from '@react-hook/media-query'
+
 
 export const GlobalQueriesContext = createContext()
 export const GlobalFiltersContext = createContext()
+export const MediaQueryContext = createContext()
 
 const useGlobalQueries = ()=>{
   const manufacturerQuery = useQuery("manufacturer",fetchManufacturer)
@@ -28,20 +31,22 @@ const useGlobalFilters = ()=>{
 const PageWrapper = () => {
   const GlobalQueries = useGlobalQueries()
   const GlobalFilters = useGlobalFilters()
-
+  const mobile = useMediaQuery('(max-width: 960px)') ? "mobile" : ""
 
   return (
     <GlobalQueriesContext.Provider value={GlobalQueries}>
     <GlobalFiltersContext.Provider value={GlobalFilters}>
-      <Wrapper>
+    <MediaQueryContext.Provider value={mobile}>
+      <Wrapper className={mobile}>
           <WebMotorsLogo/>
-          <CarBike_SellCarDiv>
+          <CarBike_SellCarDiv className={mobile}>
             <CarBikeSwitch/>
             <SellMyCarBtn/>
           </CarBike_SellCarDiv>
           <SearchOfferForm/>
           <ResultsCards/>
       </Wrapper>
+    </MediaQueryContext.Provider>
     </GlobalFiltersContext.Provider>
     </GlobalQueriesContext.Provider>
     

@@ -1,13 +1,38 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useQuery } from 'react-query'
 import fetchVehicle from '../../HTTP/fetchVehicle'
-import { GlobalFiltersContext } from '../PageWrapper/PageWrapper'
+import { GlobalFiltersContext, MediaQueryContext } from '../PageWrapper/PageWrapper'
 import { priceRangeOptions } from '../SearchOfferForm/selectOptions/PriceRangeOptions'
 import { yearOptions } from '../SearchOfferForm/selectOptions/YearOptions'
 import Card from './Card'
 import { CardsWrapper } from './ResultsCards.styles'
+import Swal from 'sweetalert2'
 
 
+const useScrollToView = ()=>{
+    const cards = useRef()
+    const {filters} = useContext(GlobalFiltersContext)
+
+    useEffect(()=>{
+        if(filters){
+            const element = cards.current.firstChild
+            if(element){
+                element.scrollIntoView({behavior: "smooth"})
+            }
+            else{
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Nenhuma oferta encontrada com esse filtro',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                  })
+            }
+            
+            
+        }
+    },[filters])
+    return cards
+}
 const getFilteredData = (data, filters)=>{
     if(!filters) return []
     
@@ -88,6 +113,7 @@ const Page = ({pageNum, loadedPages, setLoadedPages, LoadMorePages, setMaximumPa
 } 
 
 const ResultsCards = () => {
+    const mobile = useContext(MediaQueryContext)
     const [maximumPages, setMaximumPages] = useState(5)
     const [loadedPages, setLoadedPages] = useState([])
 
@@ -107,9 +133,12 @@ const ResultsCards = () => {
         return newArray
     })()
 
+    const CardsRef  = useScrollToView()
+
+
 
   return (
-    <CardsWrapper>
+    <CardsWrapper ref={CardsRef}  className={mobile + " cards"}>
         {Pages}
     </CardsWrapper>
   )
