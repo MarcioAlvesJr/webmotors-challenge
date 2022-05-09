@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BtnWrapper, CustomBtn } from './CarBikeSwitch.styles'
-import { ReactComponent as CarSvg } from './svgs/car.svg'
-import { ReactComponent as MotorcycleSvg } from './svgs/motorcycle.svg'
+import { ReactComponent as CarSvg } from '../../imgs/svgs/car.svg'
+import { ReactComponent as MotorcycleSvg } from '../../imgs/svgs/motorcycle.svg'
 
 
 const CAR = "CAR"

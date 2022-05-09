@@ -2,13 +2,15 @@ import React, { useContext, useState } from 'react'
 import { useQuery } from 'react-query'
 import fetchVehicle from '../../HTTP/fetchVehicle'
 import { GlobalFiltersContext } from '../PageWrapper/PageWrapper'
+import { priceRangeOptions } from '../SearchOfferForm/selectOptions/PriceRangeOptions'
+import { yearOptions } from '../SearchOfferForm/selectOptions/YearOptions'
 import Card from './Card'
 import { CardsWrapper } from './ResultsCards.styles'
 
 
 const getFilteredData = (data, filters)=>{
     if(!filters) return []
-    debugger
+    
     return data
     //Filter Brand
     .filter(vehicle=>{
@@ -25,6 +27,30 @@ const getFilteredData = (data, filters)=>{
         if(filters.version === "") return true
         return filters.version === vehicle.Version
     })
+    //Filter Year
+    .filter(vehicle=>{
+        if(filters.year === "") return true
+
+        const selectedYears = yearOptions.find(option=>option.label === filters.year)
+        return (
+            selectedYears.fab === vehicle.YearFab &&
+            selectedYears.model === vehicle.YearModel
+        )
+    })
+    //Filter Price
+    .filter(vehicle=>{
+        if(filters.priceRange === "") return true
+
+        const selectedRange = priceRangeOptions.find(option=>option.label === filters.priceRange)
+        const price = parseFloat(vehicle.Price)/1000
+        debugger
+        return (
+            !selectedRange.max? price > selectedRange.min:
+            !selectedRange.min? price <= selectedRange.max:
+            price > selectedRange.min && price <= selectedRange.max
+        )
+    })
+
 }
 const Page = ({pageNum, loadedPages, setLoadedPages, LoadMorePages, setMaximumPages}) =>{
     const [stopLoading, setStopLoading]= useState(false)
