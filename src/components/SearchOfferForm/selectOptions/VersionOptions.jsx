@@ -1,9 +1,9 @@
 import { useFormikContext } from 'formik'
 import React, { useContext, useEffect } from 'react'
 import { GlobalQueriesContext } from '../../PageWrapper/PageWrapper'
-import loadingOption from './loadingOption'
-import noOptionSelected from './noOptionSelected'
-import warningOption from './warningOption'
+import loadingOption from './optionsPatterns/loadingOption'
+import noOptionSelected from './optionsPatterns/noOptionSelected'
+import warningOption from './optionsPatterns/warningOption'
 
 
 const useGetSelectedBrand = ()=>{

@@ -15,7 +15,7 @@ const customSelect = props => {
           </LabelSpanWrapper>
         </label>}
 
-        <Field {...props} id={fieldId} as="select" >
+        <Field name={props.name} id={fieldId} as="select" >
           {props.options}
         </Field>
     </Wrapper>

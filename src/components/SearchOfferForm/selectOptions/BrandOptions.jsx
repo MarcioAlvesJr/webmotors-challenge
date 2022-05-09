@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalQueriesContext } from '../../PageWrapper/PageWrapper'
-import loadingOption from './loadingOption'
-import noOptionSelected from './noOptionSelected'
+import loadingOption from './optionsPatterns/loadingOption'
+import noOptionSelected from './optionsPatterns/noOptionSelected'
 
 const BrandOptions = () => {
     const {manufacturerQuery} = useContext(GlobalQueriesContext)
