@@ -24,7 +24,7 @@ const customSelect = props => {
 function FieldValue(props){
   const value = useFormikContext().values[props.name];
 
-  return <span>: <strong>{value}</strong></span>
+  return <span>: <strong>{value === ""? props.notSelectedText : value}</strong></span>
 }
 
 export default customSelect
