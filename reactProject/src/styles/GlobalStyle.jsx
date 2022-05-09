@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
 
     }
+    button{
+        cursor: pointer;
+    }
 
 `
 

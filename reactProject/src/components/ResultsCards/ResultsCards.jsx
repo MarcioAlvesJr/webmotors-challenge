@@ -68,7 +68,7 @@ const getFilteredData = (data, filters)=>{
 
         const selectedRange = priceRangeOptions.find(option=>option.label === filters.priceRange)
         const price = parseFloat(vehicle.Price)/1000
-        debugger
+        
         return (
             !selectedRange.max? price > selectedRange.min:
             !selectedRange.min? price <= selectedRange.max:
