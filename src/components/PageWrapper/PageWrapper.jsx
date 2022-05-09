@@ -8,7 +8,7 @@ import CarBikeSwitch from '../CarBikeSwitch/CarBikeSwitch'
 import ResultsCards from '../ResultsCards/ResultsCards'
 import SearchOfferForm from '../SearchOfferForm/SearchOfferForm'
 import SellMyCarBtn from '../SellMyCarBtn/SellMyCarBtn'
-import { Wrapper } from './PageWrapper.styles'
+import { CarBike_SellCarDiv, WebMotorsLogo, Wrapper } from './PageWrapper.styles'
 
 export const GlobalQueriesContext = createContext()
 export const GlobalFiltersContext = createContext()
@@ -34,9 +34,11 @@ const PageWrapper = () => {
     <GlobalQueriesContext.Provider value={GlobalQueries}>
     <GlobalFiltersContext.Provider value={GlobalFilters}>
       <Wrapper>
-          <header>Logo</header>
-          <CarBikeSwitch/>
-          <SellMyCarBtn/>
+          <WebMotorsLogo/>
+          <CarBike_SellCarDiv>
+            <CarBikeSwitch/>
+            <SellMyCarBtn/>
+          </CarBike_SellCarDiv>
           <SearchOfferForm/>
           <ResultsCards/>
       </Wrapper>

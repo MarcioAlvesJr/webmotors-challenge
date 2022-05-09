@@ -1,8 +1,9 @@
 import React from 'react'
+import { CustomBtn } from './SellMyCarBtn.styles'
 
 const SellMyCarBtn = () => {
   return (
-    <button type='button'>Vender meu carro</button>
+    <CustomBtn type='button'>Vender meu carro</CustomBtn>
   )
 }
 
