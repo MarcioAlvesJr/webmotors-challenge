@@ -4,13 +4,13 @@ const initialValues = () => {
   return {
       new: true,
       used: true,
-      where: "teste",
+      where: "São Paulo - SP",
       radius: "100km",
-      brand: "teste",
-      model: "teste",
-      year: "teste",
-      priceRange: "teste",
-      version: "teste",
+      brand: "",
+      model: "",
+      year: "",
+      priceRange: "",
+      version: "",
   }
 }
 

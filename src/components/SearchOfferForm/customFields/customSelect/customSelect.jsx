@@ -4,6 +4,7 @@ import { AddDynamicPaddingToSelect, LabelSpanWrapper, Wrapper } from "./customSe
 
 const customSelect = props => {
   const fieldId = props.name
+
   return (
     <Wrapper id={fieldId + '-wrapper'}>
         {!props.simple &&
@@ -15,10 +16,7 @@ const customSelect = props => {
         </label>}
 
         <Field {...props} id={fieldId} as="select" >
-          {props.simple && <option value="">{props.label}</option> }
-          {props.options.map(option=> 
-            <option key={option}>{option}</option>
-          )}
+          {props.options}
         </Field>
     </Wrapper>
   )

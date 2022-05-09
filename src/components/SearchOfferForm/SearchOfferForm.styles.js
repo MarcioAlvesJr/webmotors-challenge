@@ -2,12 +2,8 @@ import { Formik } from "formik";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-form{
-    height: 312px;
-    width: 933px;
     background-color: ${({theme})=>theme.white};
     padding: 2rem 3rem;
-}
 `
 export const CheckboxWrapper = styled.div`
     margin-top: 1rem;
@@ -62,6 +58,8 @@ export const ResetSubmitDiv= styled.div`
         background-color: #ff000000;
         border: none;
         color: ${({theme})=>theme.gray};
+        font-size: 1rem;
+        padding: 0;
     }
     
     input[type="submit"]{
