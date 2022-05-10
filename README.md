@@ -4,18 +4,18 @@ Para iniciar o projeto primeiro rode o script [npm run devStart](#npm-run-devsta
 
 ## Scripts
 
-## Diretorio "reactProject"
+### Diretorio "reactProject"
 
-### `npm run devStart`
+#### `npm run devStart`
 
 Roda o micro serviço em [http://localhost:3001](http://localhost:3001).
 
-## Diretorio "reactProject"
+### Diretorio "reactProject"
 
-### `npm start`
+#### `npm start`
 
 Roda a aplicação React em [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+#### `npm run build`
 
 Criar uma Build padrão de React
